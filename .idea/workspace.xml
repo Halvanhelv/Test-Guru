@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d98bf261-d68a-4358-884f-cb79aa8e2a3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200501084006_create_tests.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200501084006_create_tests.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrate/20200501084114_create_questions.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200501084114_create_questions.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/migrate/20200501084232_create_answers.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20200501084232_create_answers.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +157,7 @@
       <option name="presentableId" value="Default" />
       <updated>1588280271813</updated>
       <workItem from="1588280275265" duration="388000" />
-      <workItem from="1588321669628" duration="4914000" />
+      <workItem from="1588321669628" duration="5586000" />
     </task>
     <servers />
   </component>
