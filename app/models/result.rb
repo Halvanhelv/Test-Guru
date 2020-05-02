@@ -1,4 +1,2 @@
 class Result < ApplicationRecord
-
-
 end
