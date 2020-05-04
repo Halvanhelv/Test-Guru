@@ -4,9 +4,23 @@ class Test < ApplicationRecord
   belongs_to :category
   has_many :questions
   has_many :tests_users
-  has_many :users, through: :tests_users #нужно что бы проходило через модель tests_user а не напрямую в модель user. з
+  has_many :users, through: :tests_users # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
+
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :title, uniqueness: { scope: :level,
+                                  message: 'Неуникальное значение уровня и названия теста' }
+  scope :easy, -> { where(level: (0..1)) }
+  scope :middle, -> { where(level: (2..4)) }
+  scope :hard, -> { where(level: (5..Float::INFINITY)) }
+  scope :sort_category, lambda { |category|
+                          joins(:category)
+                            .where(categories: { title: category }) }
+
+  # Active Record позволяет использовать имена связей, определенных в модели, как ярлыки для определения условия JOIN
+
   def self.test_sort(name)
-    Test.joins('join categories on categories.id = tests.category_id')
-        .where('categories.title = ?', name).order(title: :desc).pluck(:title)
+    sort_category(name).order(title: :desc).pluck(:title)
+
   end
 end
