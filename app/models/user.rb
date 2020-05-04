@@ -5,11 +5,8 @@ class User < ApplicationRecord
   has_many :tests_author, class_name: 'Test', foreign_key: 'author_id' #вместо :tests_author можно указать что будет удобнее
   validates :email, presence: true
 
+  def user_results(level)
+    tests.where('level = ?', level)
 
-  scope :sort_level, ->(level) { joins(:tests) .where(tests: { level: level }) }
-
-
-  def self.user_results(level)
-    sort_level(level)
   end
 end

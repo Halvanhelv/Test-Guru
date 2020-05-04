@@ -18,14 +18,9 @@ class Test < ApplicationRecord
                             .where(categories: { title: category }) }
 
   # Active Record позволяет использовать имена связей, определенных в модели, как ярлыки для определения условия JOIN
-  #
+
   def self.test_sort(name)
     sort_category(name).order(title: :desc).pluck(:title)
 
   end
 end
-
-# def self.test_sort(name)
-#   Test.joins('join categories on categories.id = tests.category_id')
-#       .where('categories.title = ?', name).order(title: :desc).pluck(:title)
-# end
