@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to test_questions_path(@test) # при передаче объекта все равно подставляется цифра
     else
-      render inline: '<h1"><%= @question.errors.full_messages %></h1>'
+      render inline: '<h1><%= @question.errors.full_messages %></h1>'
     end
   end
 
