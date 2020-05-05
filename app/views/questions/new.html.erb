@@ -1,0 +1,11 @@
+<h1>Создать вопрос в тесте <%= @test.id %></h1>
+
+<form action ='/tests/<%= @test.id %>/questions' method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <p>
+    <label for="question-body"> Вопрос:</label>
+    <input type="text" name="question[body]" id="question-body">
+  </p><br>
+  <button type="submit">Создать</button>
+
+</form>

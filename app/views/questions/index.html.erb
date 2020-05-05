@@ -1,0 +1,6 @@
+<h1><%= @test.title %></h1><% @questions.each do |index|%>
+  <a href="/questions/<%= index.id%>"><p><%= index.body %></p></a>
+  <p> id: <%= index.id %></p>
+<%end%>
+
+<a href="/tests/<%= @test.id %>/questions/new">Создать вопрос</a>
