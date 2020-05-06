@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestsController < ApplicationController
   before_action :find_test, only: %i[edit show update]
   before_action :find_question, only: %i[show destroy edit]
@@ -13,7 +15,7 @@ class TestsController < ApplicationController
     if @test.save
       redirect_to test_questions_path(@test) # при передаче объекта все равно подставляется цифра
     else
-      render :new # вызов вьюшки new но без кода внутри. @question берется отсюда
+      render :new # вызов вьюшки new но без кода внутри. @test берется отсюда
     end
   end
 
@@ -24,7 +26,6 @@ class TestsController < ApplicationController
   def show; end
 
   def update
-
     if @test.update(test_params)
       redirect_to test_path(@test)
     else
@@ -32,11 +33,12 @@ class TestsController < ApplicationController
     end
   end
 
-
   private
+
   def test_params
     params.require(:test).permit(:title, :category_id, :level, :author_id)
   end
+
   def find_test
     @test = Test.find(params[:id])
   end

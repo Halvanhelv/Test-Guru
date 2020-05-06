@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   # has_and_belongs_to_many :users
   belongs_to :author, class_name: 'User'
@@ -15,12 +17,12 @@ class Test < ApplicationRecord
   scope :hard, -> { where(level: (5..Float::INFINITY)) }
   scope :sort_category, lambda { |category|
                           joins(:category)
-                            .where(categories: { title: category }) }
+                            .where(categories: { title: category })
+                        }
 
   # Active Record позволяет использовать имена связей, определенных в модели, как ярлыки для определения условия JOIN
 
   def self.test_sort(name)
     sort_category(name).order(title: :desc).pluck(:title)
-
   end
 end

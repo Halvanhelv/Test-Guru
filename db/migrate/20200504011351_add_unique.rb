@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddUnique < ActiveRecord::Migration[6.0]
   def change
     add_index :categories, :title, unique: true

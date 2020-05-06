@@ -1,18 +1,17 @@
+# frozen_string_literal: true
+
 class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy edit update]
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found  # не забывать ":" перед названием метода
-
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found # не забывать ":" перед названием метода
 
   def index
     @questions = @test.questions.all
-
   end
 
   def edit; end
 
   def update
-
     if @question.update(question_params)
       redirect_to question_path(@question)
     else
@@ -30,7 +29,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-
     @question = @test.questions.new(question_params)
 
     if @question.save
@@ -42,7 +40,6 @@ class QuestionsController < ApplicationController
 
   def new
     @question = @test.questions.new
-
   end
 
   def show; end
@@ -59,12 +56,9 @@ class QuestionsController < ApplicationController
 
   def rescue_with_question_not_found
     render inline: '<h1>Вопрос не найден</h1>'
-
   end
+
   def question_params
     params.require(:question).permit(:body)
   end
-
-
-
 end
