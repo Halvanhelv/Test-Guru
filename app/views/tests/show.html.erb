@@ -1,0 +1,10 @@
+<h1>Тест <%=@test.title %></h1>
+<% @test.questions.each do |question| %>
+<ul>
+    <li><%= link_to question.body, question_path(question) %></li>
+</ul>
+
+<% end %>
+
+<p><%= link_to 'Добавить вопрос', new_test_question_path(@test) %></p>
+<p><%= link_to 'Вернуться к тестам', tests_path %></p>
