@@ -34,7 +34,9 @@ class TestsController < ApplicationController
 
 
   private
-
+  def test_params
+    params.require(:test).permit(:title, :category_id, :level, :author_id)
+  end
   def find_test
     @test = Test.find(params[:id])
   end

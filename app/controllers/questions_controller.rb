@@ -61,6 +61,9 @@ class QuestionsController < ApplicationController
     render inline: '<h1>Вопрос не найден</h1>'
 
   end
+  def question_params
+    params.require(:question).permit(:body)
+  end
 
 
 
