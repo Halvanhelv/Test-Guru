@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -7,16 +8,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user = User.create(name: 'Dmitry', login: 'dmitry_1488', password: 'qwerty',email: 'asdasd@gmail')
+user = User.create(name: 'Dmitry', login: 'dmitry_1488', password: 'qwerty', email: 'asdasd@gmail')
 sport = Category.create(title: 'Sport')
 cars = Category.create(title: 'Cars')
 it = Category.create(title: 'IT')
 
-first_test = Test.create(title: 'Soccer', category_id: sport.id,author_id:user.id)
-second_test = Test.create(title: 'Buscet', category_id: cars.id,author_id:user.id)
-third_test = Test.create(title: 'Lada', category_id: cars.id,author_id:user.id)
-fourth_test = Test.create(title: 'Ruby', category_id: it.id,author_id:user.id)
-fifth_test = Test.create(title: 'PHP', category_id: it.id,author_id:user.id)
+first_test = Test.create(title: 'Soccer', category_id: sport.id, author_id: user.id)
+second_test = Test.create(title: 'Buscet', category_id: cars.id, author_id: user.id)
+third_test = Test.create(title: 'Lada', category_id: cars.id, author_id: user.id)
+fourth_test = Test.create(title: 'Ruby', category_id: it.id, author_id: user.id)
+fifth_test = Test.create(title: 'PHP', category_id: it.id, author_id: user.id)
 
 first_question = Question.create(body: 'Football in the usa', test_id: first_test.id)
 second_question = Question.create(body: 'Where is Lada produced?', test_id: second_test.id)

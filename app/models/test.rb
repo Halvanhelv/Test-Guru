@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   # has_and_belongs_to_many :users
   belongs_to :author, class_name: 'User'
   belongs_to :category
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
+  has_many :test_passages
+  has_many :users, through: :test_passages # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
@@ -15,12 +17,12 @@ class Test < ApplicationRecord
   scope :hard, -> { where(level: (5..Float::INFINITY)) }
   scope :sort_category, lambda { |category|
                           joins(:category)
-                            .where(categories: { title: category }) }
+                            .where(categories: { title: category })
+                        }
 
   # Active Record позволяет использовать имена связей, определенных в модели, как ярлыки для определения условия JOIN
 
   def self.test_sort(name)
     sort_category(name).order(title: :desc).pluck(:title)
-
   end
 end
