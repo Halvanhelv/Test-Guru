@@ -10,9 +10,15 @@ class TestPassage < ApplicationRecord
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
   end
-
+  WIN_COUNT = 85
   def current_question_number
     test.questions.count
+  end
+
+  def success?
+
+    result? < WIN_COUNT
+
   end
 
   def all_questions_number
@@ -20,12 +26,14 @@ class TestPassage < ApplicationRecord
   end
 
   def result?
-    a = test.questions.count
-    b = correct_questions
-    (Float(b * 100) / a).ceil
+    test_all_questions_count = test.questions.count
+    correct_questions_count = correct_questions
+    (Float(correct_questions_count * 100) / test_all_questions_count).ceil
     end
 
   def correct_answer?(answer_ids)
+    return if answer_ids.nil? #если юзер не сделает выбор
+
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 

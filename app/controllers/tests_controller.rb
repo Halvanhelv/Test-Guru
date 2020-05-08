@@ -2,7 +2,7 @@
 
 class TestsController < ApplicationController
   before_action :find_test, only: %i[edit show update start]
-  # before_action :find_question, only: %i[show destroy edit]
+
   before_action :set_user, only: :start
   def index
     @tests = Test.all
@@ -50,9 +50,6 @@ class TestsController < ApplicationController
     @test = Test.find(params[:id])
   end
 
-  def find_question
-    @question = Question.find(params[:id])
-  end
 
   def set_user
     @user = User.first

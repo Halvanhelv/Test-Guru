@@ -1,5 +1,5 @@
 <h1> Тест<%=@test_passage.test.title %>  завершен!</h1>
-<% if @test_passage.result? <= 85 %>
+<% if @test_passage.success? %>
   <h1 style="color: red">Вы не сдали тест,ваш результат <%= @test_passage.result?%>%</h1>
   <%else %>
   <h1 style="color: green">Вы сдали тест,ваш результат <%= @test_passage.result?%>%</h1>
