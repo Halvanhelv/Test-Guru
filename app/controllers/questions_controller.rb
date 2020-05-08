@@ -32,7 +32,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_questions_path(@test) # при передаче объекта все равно подставляется цифра
+      redirect_to test_path(@test) # при передаче объекта все равно подставляется цифра
     else
       render :new # вызов вьюшки new но без кода внутри. @question берется отсюда
     end

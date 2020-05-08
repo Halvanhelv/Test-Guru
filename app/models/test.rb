@@ -5,8 +5,8 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :category
   has_many :questions
-  has_many :tests_users
-  has_many :users, through: :tests_users # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
+  has_many :test_passages
+  has_many :users, through: :test_passages # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

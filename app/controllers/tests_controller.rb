@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[edit show update]
-  before_action :find_question, only: %i[show destroy edit]
+  before_action :find_test, only: %i[edit show update start]
+  # before_action :find_question, only: %i[show destroy edit]
+  before_action :set_user, only: :start
   def index
     @tests = Test.all
   end
@@ -21,6 +22,12 @@ class TestsController < ApplicationController
 
   def new
     @test = Test.new
+  end
+
+  def start
+    @user.tests.push(@test)
+
+    redirect_to @user.test_passage(@test) # придет конкретный объект и поскольку он один то сработает метод show в контроллере tests_controller, поскольку мы стартуем тест из со страницы всех тестов то что бы отобразился нужный нам объект нужно отправить запрос на метод show в контроллере tests_controller
   end
 
   def show; end
@@ -45,5 +52,9 @@ class TestsController < ApplicationController
 
   def find_question
     @question = Question.find(params[:id])
+  end
+
+  def set_user
+    @user = User.first
   end
 end
