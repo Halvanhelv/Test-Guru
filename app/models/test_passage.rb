@@ -32,7 +32,7 @@ class TestPassage < ApplicationRecord
     end
 
   def correct_answer?(answer_ids)
-    return if answer_ids.nil? #если юзер не сделает выбор
+    return if answer_ids.nil? # если юзер не сделает выбор
 
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
@@ -52,6 +52,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
+      self.current_question = test.questions.first if test.present?
   end
 end
