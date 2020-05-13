@@ -1,6 +1,13 @@
 <%= form_with model: @user, local: true do |form| %>
   <%= render 'layouts/shared/errors', resource: @user %>
-
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :login %>
+    <%= form.text_field :login %>
+  </p>
   <p>
     <%= form.label :email %>
     <%= form.text_field :email %>
@@ -8,13 +15,14 @@
 
   <p>
     <%= form.label :password %>
-    <%= form.password_field :password, id: :user_password %>
+    <%= form.password_field :password %>
   </p>
 
   <p>
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+    <%= form.password_field :password_confirmation%>
   </p>
+
 
 
   <%= form.submit %>

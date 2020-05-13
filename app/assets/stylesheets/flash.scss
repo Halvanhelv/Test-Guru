@@ -1,0 +1,9 @@
+.flash {
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 10px;
+
+  &.alert {
+    border-color: #ef2727;
+  }
+}
