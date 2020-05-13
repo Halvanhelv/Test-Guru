@@ -13,7 +13,7 @@ module ApplicationHelper
 
     flash.map do |key, msg|
       content_tag :div, msg, id: key, class: 'flash alert'
-    end.join
+    end.join.html_safe
 
   end
 end
