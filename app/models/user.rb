@@ -20,6 +20,7 @@ class User < ApplicationRecord
 
 
 
+
   def user_results(level)
     tests.where('level = ?', level)
   end
