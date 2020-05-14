@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'tests#index'
 
-  get :signup, to: 'users#new'
-  get :login, to: 'sessions#new'
-  resources :sessions, only: %i[create destroy]
-  resources :users, only: :create
+
+  root 'tests#index'
+  devise_for :users, path_names: { sign_in: :login, sign_out: :logout },
+                     controllers: { registrations: 'users/registrations' }
 
 
   resources :tests do
