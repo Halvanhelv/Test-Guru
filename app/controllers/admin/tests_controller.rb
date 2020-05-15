@@ -11,7 +11,6 @@ class Admin::TestsController < Admin::BaseController
   def create
     @test = current_user.tests_author.new(test_params)
 
-
     if @test.save
       redirect_to admin_test_questions_path(@test) # при передаче объекта все равно подставляется цифра
     else
@@ -22,7 +21,6 @@ class Admin::TestsController < Admin::BaseController
   def new
     @test = Test.new
   end
-
 
   def show; end
 
@@ -43,6 +41,5 @@ class Admin::TestsController < Admin::BaseController
   def find_test
     @test = Test.find(params[:id])
   end
-
 
 end
