@@ -3,6 +3,7 @@
 class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show result update]
   before_action :authenticate_user!
+
   def show
     # тут сработает когда сделаем  redirect_to @user.test_passage(@test) из контроллере tests
   end
@@ -12,6 +13,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answers_ids])
     if @test_passage.complited?
+      TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

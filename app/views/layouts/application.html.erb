@@ -10,13 +10,13 @@
   </head>
 
   <body>
+<%=render 'layouts/shared/flash' %>
 
-  <% if logged_in? %>
-    <p class="nav user">Приветствуем, <%= current_user.name %> <%=link_to "Guru",root_path %> | <%= link_to 'Log out', session_path(current_user.id),method: :delete, data: {confirm: "Вы уверены?"} %></p>
+  <% if user_signed_in? %>
+    Приветствуем, <%= current_user.name %> Guru | <%= link_to 'Log out', destroy_user_session_path, method: :delete %></p>
   <% else %>
-    <p><%= link_to 'Login', login_path %> | <%= link_to 'Signup', signup_path %></p>
+    <p class="nav user"><%= link_to 'Login', new_user_session_path %> | <%= link_to 'Signup', new_user_registration_path %></p>
   <% end %>
-
 
     <%= yield %>
     <%= render 'layouts/footer' %>

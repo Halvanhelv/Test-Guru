@@ -2,8 +2,6 @@
 
 <% @tests.each do |test|%>
   <%=test.questions.count %>
-  <%= link_to test.title, test_path(test) %>
+
  <%=button_to 'start',start_test_path(test) %>
 <%end%>
-
-<p><%= link_to 'Добавить тест', new_test_path %></p>

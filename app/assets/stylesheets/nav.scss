@@ -1,4 +1,25 @@
-.nav.user
-{
-  text-align: right;
+
+.nav {
+  &.user {
+    text-align: right;
+  }
+
+  &.admin {
+    text-align: right;
+    color: #ffffff;
+    padding: 10px;
+  }
+
+  &-admin {
+    background-color: #3c85e8;
+
+    span {
+      display:block;
+      float:left;
+      color: #ffffff;
+      padding: 10px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  }
 }

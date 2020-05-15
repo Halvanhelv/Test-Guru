@@ -1,0 +1,17 @@
+<h1>Вопрос:</h1>
+<%=@answer.question.body %>
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Ответ:</b>
+  <%=@answer.body %>
+</p>
+<p>
+<p>
+  <b>Ответ правильный?</b>
+  <%=@answer.correct %>
+</p>
+<p>
+  <b>Ответ:</b>
+</p>
+<%= link_to 'Edit', edit_admin_answer_path(@answer) %> |
+<%= link_to 'Back', admin_question_path(@answer.question_id) %>
