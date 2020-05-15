@@ -8,10 +8,7 @@ Rails.application.routes.draw do
                      controllers: { registrations: 'users/registrations' }
 
 
-  resources :tests do
-    resources :questions, shallow: true do
-      resources :answers, shallow: true
-    end
+  resources :tests, only: :index do
     member do
       post :start
     end
@@ -19,6 +16,15 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     member do
       get :result # GET /tests_passages/10/result
+    end
+  end
+  namespace :admin do
+    root 'tests#index'
+
+    resources :tests do
+      resources :questions, shallow: true, except: :index do
+        resources :answers, shallow: true, except: :index
+      end
     end
   end
 end

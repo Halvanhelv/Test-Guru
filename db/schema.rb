@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_065318) do
+ActiveRecord::Schema.define(version: 2020_05_15_053309) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -74,9 +74,12 @@ ActiveRecord::Schema.define(version: 2020_05_14_065318) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "type", default: "User", null: false
+    t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["type"], name: "index_users_on_type"
   end
 
   add_foreign_key "answers", "questions"

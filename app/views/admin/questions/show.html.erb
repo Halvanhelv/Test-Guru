@@ -1,0 +1,11 @@
+<h1> Вопрос: <%=@question.body %> из теста <%=@question.test.title %> </h1>
+<li><%= link_to 'Изменить', edit_admin_question_path(@question) %></li>
+<li><%= link_to 'Удалить', admin_question_path(@question), method: :delete, data: {confirm: "Вы уверены?"} %></li>
+
+<%=link_to 'Новый ответ',new_admin_question_answer_path(@question) %>
+
+<ol>
+  <h3>Ответы</h3>
+  <%=render @question.answers %>
+</ol>
+<p><%= link_to 'Вернуться к тестам', admin_tests_path %></p>

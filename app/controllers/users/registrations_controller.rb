@@ -41,7 +41,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # #В Devise есть только три действия, которые позволяют передавать в модель любой набор параметров, что требует санитарной обработки. Их имена и разрешенные параметры по умолчанию: sign_in (Devise::SessionsController#new) - Permits only the authentication keys (like email)
+
+  # sign_in (Devise::SessionsController#new) - Permits only the authentication keys (like email)
   # sign_up (Devise::RegistrationsController#create) - Permits authentication keys plus password and password_confirmation
   # account_update (Devise::RegistrationsController#update) - Permits authentication keys plus password, password_confirmation and current_password
   def configure_sign_up_params

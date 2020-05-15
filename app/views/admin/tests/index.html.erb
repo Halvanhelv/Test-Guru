@@ -1,0 +1,8 @@
+<h1>Все тесты</h1>
+
+<% @tests.each do |test|%>
+  <%=test.questions.count %>
+  <%= link_to test.title, admin_test_path(test) %>
+<%end%>
+
+<p><%= link_to 'Добавить тест', new_admin_test_path %></p>
