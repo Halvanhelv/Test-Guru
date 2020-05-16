@@ -1,7 +1,7 @@
-<h1>Все тесты</h1>
+<h1><%=t('.header') %></h1>
 
 <% @tests.each do |test|%>
   <%=test.questions.count %>
 
- <%=button_to 'start',start_test_path(test) %>
+ <%=button_to t('test.index.start'),start_test_path(test) %>
 <%end%>

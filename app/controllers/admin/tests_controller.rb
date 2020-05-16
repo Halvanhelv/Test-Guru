@@ -12,7 +12,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.tests_author.new(test_params)
 
     if @test.save
-      redirect_to admin_test_questions_path(@test) # при передаче объекта все равно подставляется цифра
+      redirect_to admin_tests_path(@test), notice: t('.success')       # при передаче объекта все равно подставляется цифра
     else
       render :new # вызов вьюшки new но без кода внутри. @test берется отсюда
     end
