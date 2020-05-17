@@ -1,7 +1,17 @@
-<h1><%=t('.header') %></h1>
-
-<% @tests.each do |test|%>
-  <%=test.questions.count %>
-
- <%=button_to t('test.index.start'),start_test_path(test) %>
-<%end%>
+<div class="row">
+  <div class="col">
+    <h1><%= t('.header') %></h1>
+    <table class="table">
+      <tr>
+        <th><%= t('.title') %></td>
+        <th><%= t('.category') %></td>
+        <th><%= t('.level') %></td>
+        <th><%= t('.questions') %></td>
+        <th><%= t('.action') %></td>
+      </tr>
+      <% @tests.each do |test| %>
+        <%= render test %>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -14,3 +14,8 @@ ru:
   test_passages:
     result:
       header: "Тест %{title}  завершен!"
+  admin:
+    tests:
+      test:
+        edit: "Изменить"
+        delete: "Удалить"

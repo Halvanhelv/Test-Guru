@@ -3,7 +3,7 @@
     <%= t('.header', count: resource.errors.count) %>
     <ul>
       <%resource.errors.full_messages.each do |message| %>
-        <li><%=message %></li>
+        <li class="alert alert-danger"><%=message %></li>
       <%end %>
 
     </ul>

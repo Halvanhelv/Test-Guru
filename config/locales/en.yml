@@ -18,6 +18,11 @@ en:
   tests:
     index:
       header: "Tests List"
+      title: "Title"
+      category: "Category"
+      level: "Level"
+      questions: "Questions"
+      action: "Action"
   test:
     index:
       start: "Start"
