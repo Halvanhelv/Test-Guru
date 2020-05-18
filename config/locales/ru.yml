@@ -50,3 +50,7 @@ ru:
     tests_mailer:
       completed_test:
         subject: "Вы завершили тест!"
+  test_passages:
+    gist:
+      success: "Gist успешно создан"
+      failure: "Не удалось создать Gist"

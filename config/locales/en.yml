@@ -50,3 +50,6 @@ en:
     tests_mailer:
       completed_test:
         subject: "You complete test!"
+    gist:
+      success: "Gist created!"
+      failure: "Gist error"
