@@ -10,9 +10,9 @@
         <th><%= t('.questions') %></td>
         <th><%= t('.action') %></td>
       </tr>
-      <% @tests.each do |test| %>
-        <%= render test %>
-      <% end %>
+
+        <%= render @tests %>
+
     </table>
     <p><%= link_to t('.create_test'), new_admin_test_path %></p>
 

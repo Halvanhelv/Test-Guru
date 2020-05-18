@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question) %></td>
+  <td><%= link_to t('.github_gist'), gist.link_to_gist, target:'_blank', class: 'btn btn-primary' %></td>
+  <td><%= gist.user.email %></td>
+</tr>

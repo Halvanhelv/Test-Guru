@@ -15,6 +15,13 @@ en:
         test: "Test"
       create:
         success: "Test was successfully created."
+    gists:
+      index:
+        gists: ""
+        question: ""
+        links: ""
+        user: ""
+        back: ""
   tests:
     index:
       header: "Tests List"
@@ -51,5 +58,7 @@ en:
       completed_test:
         subject: "You complete test!"
     gist:
-      success: "Gist created!"
+      success: "Gist created,%{gist_link}!"
       failure: "Gist error"
+  title: "%{title}"
+  text: "%{question} %{test}"

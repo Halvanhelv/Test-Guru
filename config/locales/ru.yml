@@ -20,6 +20,13 @@ ru:
         test: "Тест"
       create:
         success: "Тест успешно создан"
+    gists:
+      index:
+        gists: ""
+        question: ""
+        links: ""
+        user: ""
+        back: ""
   tests:
     index:
       header: "Тесты"
@@ -52,5 +59,6 @@ ru:
         subject: "Вы завершили тест!"
   test_passages:
     gist:
-      success: "Gist успешно создан"
+      success: "Gist успешно создан,%{gist_link}"
       failure: "Не удалось создать Gist"
+  title: "%{title}"

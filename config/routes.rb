@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     end
   end
   namespace :admin do
+    resources :gists, only: :index
+
     root 'tests#index'
 
     resources :tests do

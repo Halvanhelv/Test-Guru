@@ -1,0 +1,16 @@
+<div class="container">
+<div class="row">
+  <div class="col">
+    <h1><%= t('.gists') %></h1>
+    <table class="table">
+      <tr>
+        <th><%= t('.question') %></th>
+        <th><%= t('.links') %></th>
+        <th><%= t('.user') %></th>
+      <tr>
+        <%= render @gists %>
+    </table>
+    <p><%= link_to t('.back'), admin_root_path %></p>
+  </div>
+</div>
+</div>
