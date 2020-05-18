@@ -7,6 +7,11 @@ ru:
       index:
         header: "Список тестов"
         create_test: "Добавить тест"
+        title: "Название"
+        category: "Категория"
+        level: "Сложность"
+        questions: "Количество вопросов"
+        action: "Действия"
       edit:
         edit: "Изменить тест"
       show:

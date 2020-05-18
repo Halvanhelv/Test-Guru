@@ -12,3 +12,8 @@ en:
     errors:
       messages:
         blank: "can not be blank"
+  admin:
+    tests:
+      test:
+        edit: "Edit"
+        delete: "Delete"
