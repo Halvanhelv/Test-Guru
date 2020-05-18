@@ -22,11 +22,11 @@ ru:
         success: "Тест успешно создан"
     gists:
       index:
-        gists: ""
-        question: ""
-        links: ""
-        user: ""
-        back: ""
+        gists: "Гисты"
+        question: "Вопрос"
+        links: "Ссылка"
+        user: "Пользователь"
+        back: "Назад"
   tests:
     index:
       header: "Тесты"

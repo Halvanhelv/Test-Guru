@@ -17,11 +17,11 @@ en:
         success: "Test was successfully created."
     gists:
       index:
-        gists: ""
-        question: ""
-        links: ""
-        user: ""
-        back: ""
+        gists: "Gists"
+        question: "Question"
+        links: "Link"
+        user: "User"
+        back: "Back"
   tests:
     index:
       header: "Tests List"

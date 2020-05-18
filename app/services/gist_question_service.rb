@@ -9,9 +9,6 @@ class GistQuestionService
     @client.create_gist(gist_params)
 
   end
-  def suck
-    ENV['GIST_TOKEN']
-  end
   def created_gist?
     @client.last_response.status == 201 || 200 # Проверем ответ на наличие указания что Gist создан
   end
