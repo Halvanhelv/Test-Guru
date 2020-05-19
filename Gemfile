@@ -28,8 +28,10 @@ gem 'devise', '~> 4.0'
 # LOCAL
 gem 'rails-i18n', '~> 6.0.0'
 # UI
+gem 'octicons_helper'
 gem 'bootstrap', '~> 4.4.0'
 gem 'jquery-rails'
+#GitAPI
 gem 'octokit'
 # network
 gem 'faraday'

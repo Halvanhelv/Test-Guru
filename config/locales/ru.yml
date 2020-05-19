@@ -30,6 +30,7 @@ ru:
   tests:
     index:
       header: "Тесты"
+      title: "Название"
   test:
     index:
       start: "Старт"
