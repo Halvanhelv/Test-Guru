@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, only: %i[show result update]
+  before_action :set_test_passage, only: %i[show result update gist]
   before_action :authenticate_user!
 
   def show
@@ -18,6 +18,19 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def gist
+    connection = GistQuestionService.new(@test_passage.current_question)
+    result = connection.call
+    if connection.success?
+      current_user.gists.create(question_id: @test_passage.current_question_id, link_to_gist: result.html_url)
+      flash[:notice] = t('.success', gist_link: view_context.link_to('Gist', result.html_url, target: '_blank'))
+    else
+      flash[:alert] = t('.failure')
+    end
+
+    redirect_to @test_passage
   end
 
   private

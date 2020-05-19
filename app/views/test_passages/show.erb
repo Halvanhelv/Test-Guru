@@ -12,6 +12,7 @@
   <%= b.label %>
 </p>
     <% end %>
+ <p> <%=link_to 'Gist',gist_test_passage_path(@test_passage),method: :post %></p>
 <%= form.submit 'Следующий вопрос' %>
 <%end %>
 <p>Вопрос <%= @test_passage.all_questions_number%> из <%=@test_passage.current_question_number %> </p>

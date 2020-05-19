@@ -15,6 +15,13 @@ en:
         test: "Test"
       create:
         success: "Test was successfully created."
+    gists:
+      index:
+        gists: "Gists"
+        question: "Question"
+        links: "Link"
+        user: "User"
+        back: "Back"
   tests:
     index:
       header: "Tests List"
@@ -50,3 +57,8 @@ en:
     tests_mailer:
       completed_test:
         subject: "You complete test!"
+    gist:
+      success: "Gist created,%{gist_link}!"
+      failure: "Gist error"
+  title: "%{title}"
+  text: "%{question} %{test}"
