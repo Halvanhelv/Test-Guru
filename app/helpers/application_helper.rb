@@ -1,4 +1,4 @@
-
+# frozen_string_literal: true
 
 module ApplicationHelper
   def current_year
@@ -10,10 +10,8 @@ module ApplicationHelper
   end
 
   def flash_messages(flash)
-
     flash.map do |key, msg|
       content_tag :div, msg, id: key, class: 'flash alert'
     end.join.html_safe
-
   end
 end

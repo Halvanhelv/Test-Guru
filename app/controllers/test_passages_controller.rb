@@ -21,7 +21,6 @@ class TestPassagesController < ApplicationController
   end
 
   def gist
-
     connection = GistQuestionService.new(@test_passage.current_question)
     result = connection.call
     if connection.created_gist?

@@ -25,13 +25,13 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 #  @Auth
 gem 'devise', '~> 4.0'
-#LOCAL
- gem 'rails-i18n', '~> 6.0.0'
-#UI
- gem 'jquery-rails'
+# LOCAL
+gem 'rails-i18n', '~> 6.0.0'
+# UI
 gem 'bootstrap', '~> 4.4.0'
-gem  'octokit'
-#network
+gem 'jquery-rails'
+gem 'octokit'
+# network
 gem 'faraday'
 
 # Use Active Storage variant

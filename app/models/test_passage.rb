@@ -16,9 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-
     result? < WIN_COUNT
-
   end
 
   def all_questions_number
@@ -52,6 +50,6 @@ class TestPassage < ApplicationRecord
   end
 
   def before_validation_set_first_question
-      self.current_question = test.questions.first if test.present?
+    self.current_question = test.questions.first if test.present?
   end
 end

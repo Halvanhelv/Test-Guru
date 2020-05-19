@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-
   devise :database_authenticatable,
          :registerable,
          # :trackable,
@@ -17,10 +16,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :name, presence: true
   validates :login, presence: true, uniqueness: true
-
-
-
-
 
   def user_results(level)
     tests.where('level = ?', level)

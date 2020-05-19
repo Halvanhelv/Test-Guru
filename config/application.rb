@@ -19,6 +19,5 @@ module TestGuru
     config.time_zone = 'Moscow'
     # config.default_locale = :'ru-RU'
     config.i18n.default_locale = :ru
-
   end
 end

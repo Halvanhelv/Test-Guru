@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GistQuestionService
   def initialize(question, client: nil)
     @question = question
@@ -7,14 +9,13 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
-
   end
+
   def created_gist?
     @client.last_response.status == 201 || 200 # Проверем ответ на наличие указания что Gist создан
   end
 
   private
-
 
   def gist_params
     {
