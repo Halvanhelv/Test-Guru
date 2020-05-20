@@ -4,16 +4,13 @@ document.addEventListener('turbolinks:load', function() {
     if (password && confirmPassword) {
         password.addEventListener('change', check)
         confirmPassword.addEventListener('change', check)
-
     }
-
 })
 
 function check() {
     const password = document.querySelector('#user_password');
     const confirmPassword = document.querySelector("#user_password_confirmation");
     if (password.value === "" || confirmPassword.value === "")
-
     {
         confirmPassword.classList.remove('wrong_password');
         return

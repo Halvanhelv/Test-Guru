@@ -9,14 +9,12 @@ document.addEventListener('turbolinks:load', function() {
 function sortRowsByTitle() {
     let i;
     const table = document.querySelector('table');
-
     const rows = table.querySelectorAll('tr');
     let sortedRows = [];
 
     for (i = 1; i < rows.length; i++) {
         sortedRows.push(rows[i]);
     }
-
 
     if (this.querySelector('.octicon-arrow-up').classList.contains('hide')) {
         sortedRows.sort(compareRowsAsc);

@@ -20,6 +20,8 @@ ru:
         test: "Тест"
       create:
         success: "Тест успешно создан"
+      form_inline:
+        submit: "ОК"
     gists:
       index:
         gists: "Гисты"
@@ -63,3 +65,11 @@ ru:
       success: "Gist успешно создан,%{gist_link}"
       failure: "Не удалось создать Gist"
   title: "%{title}"
+  layouts:
+    shared:
+      errors:
+        header:
+          one: "сохранение не удалось из-за %{count} ошибки"
+          few: "сохранение не удалось из-за %{count} ошибок"
+          many: "сохранение не удалось из-за %{count} ошибок"
+          other: "сохранение не удалось из-за %{count} ошибки"
