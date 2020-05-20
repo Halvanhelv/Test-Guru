@@ -9,11 +9,6 @@ class Admin::TestsController < Admin::BaseController
 
   def edit; end
 
-  # def destroy
-  #   @test.destroy
-  #   redirect_to admin_tests_path
-  # end
-
   def create
     @test = current_user.tests_author.new(test_params)
 
@@ -44,6 +39,11 @@ class Admin::TestsController < Admin::BaseController
     else
       render :index
     end
+  end
+
+  def destroy
+    @test.destroy
+    redirect_to admin_tests_path
   end
 
   private
