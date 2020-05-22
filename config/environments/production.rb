@@ -61,7 +61,7 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "TestGuru_production"
-
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_caching = false
   config.action_mailer.default_url_options = { host: 'https://arcane-cliffs-55701.herokuapp.com/' }
   config.action_mailer.smtp_settings = {
