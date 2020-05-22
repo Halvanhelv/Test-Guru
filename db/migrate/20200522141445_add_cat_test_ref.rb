@@ -4,3 +4,4 @@ class AddCatTestRef < ActiveRecord::Migration[6.0]
     add_reference(:tests,:category, foreign_key: { to_table: :categories })
   end
 end
+heroku
