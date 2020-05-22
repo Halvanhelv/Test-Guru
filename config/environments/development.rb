@@ -42,13 +42,14 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :letter_opener
   # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'arcane-cliffs-55701.herokuapp.com/' }
 
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
 
       address: 'smtp.gmail.com',
-      port: '465',
+      port: 465,
       user_name: 'islamgagiev69@gmail.com',
       password: 'shngjthrtfumretm',
       authentication: 'plain',
