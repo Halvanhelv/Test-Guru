@@ -18,7 +18,6 @@
         <%= render @tests %>
 
     </table>
-    <p><%= link_to t('.create_test'), new_admin_test_path %></p>
-
+    <%=button_to t('.create_test'), new_admin_test_path,class: 'btn btn-success',method:  :get %>
   </div>
 </div>
