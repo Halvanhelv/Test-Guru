@@ -1,5 +1,5 @@
 <td class="align-middle">
-  <%= content_tag :span,test.title, class: 'test-title', data: { test_id: test.id } %>
+  <%= link_to test.title, admin_test_path(test),data: { test_id: test.id } , class: 'test-title'%>
   <%= render 'form_inline', test: test == @test ? @test : test %>
 </td>
 <td class="align-middle"><%= test.category.title %></td>
