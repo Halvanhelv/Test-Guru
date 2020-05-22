@@ -6,7 +6,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'pg'
+group :production do
+  gem 'pg'
+end
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -56,6 +58,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # easy email
   gem 'letter_opener'
+
 end
 
 group :test do

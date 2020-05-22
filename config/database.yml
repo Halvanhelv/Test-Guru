@@ -9,8 +9,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   timeout: 5000
-  username: islam
-  password: 2406199797
 development:
   <<: *default
   database: test_guru_development
