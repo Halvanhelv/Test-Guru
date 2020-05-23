@@ -43,6 +43,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
+    flash[:delete] = "тест #{@test.title} удален"
     redirect_to admin_tests_path
   end
 
