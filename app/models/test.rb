@@ -5,7 +5,7 @@ class Test < ApplicationRecord
   belongs_to :author, class_name: 'User'
   belongs_to :category
   has_many :questions
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
 
   validates :title, presence: true

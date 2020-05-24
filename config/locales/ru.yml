@@ -50,6 +50,9 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      feedback: "Отзыв"
+
+
   shared:
     errors:
       header:
@@ -73,3 +76,8 @@ ru:
           few: "сохранение не удалось из-за %{count} ошибок"
           many: "сохранение не удалось из-за %{count} ошибок"
           other: "сохранение не удалось из-за %{count} ошибки"
+  feedback:
+    create:
+      feedback: "Ваш отзыв отправлен"
+
+

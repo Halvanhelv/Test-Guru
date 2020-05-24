@@ -67,4 +67,7 @@ en:
   layouts:
     shared:
       errors:
-        header: ""
+        header: "Feedback"
+  feedback:
+    create:
+      feedback: "Your review has been sent."

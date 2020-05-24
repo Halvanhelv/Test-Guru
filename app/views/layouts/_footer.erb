@@ -4,4 +4,7 @@
   <p><%= github_url("SynthesisOne", "Test-Guru") %></p>
   <p>Test-Guru Повзоляет создавать и проходить тесты.</p>
   <p><a href="https://thinknetica.com/" target="_blank">Учебный проект в онлайн-школе Thinknetica</a></p>
+ <%if current_user %>
+    <p><%=link_to 'Оставить отзыв',new_feedback_path %> </p>
+  <% end %>
 </footer>
