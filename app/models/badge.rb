@@ -42,10 +42,5 @@ class Badge < ApplicationRecord
       update_received.each { |index| index.update_columns(received: true) }
     end
   end
-  # private
-  # def multiplie_badge(user,value)
-  #   user.tests_passages
-  #
-  #
-  # end
+
 end
