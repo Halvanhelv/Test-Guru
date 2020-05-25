@@ -1,0 +1,25 @@
+<%#=render 'layouts/shared/errors',resource: @badges %>
+<div class="row">
+  <div class="col">
+    <h1><%= t('.header') %></h1>
+    <table class="table">
+      <tr>
+        <th class="sort-by-title pointer"><%= t('.title')%>
+          <%=octicon 'arrow-up',class: 'text-success hide' %>
+          <%=octicon 'arrow-down',class: 'text-success hide' %>
+        </td>
+
+        <th><%= t('.title') %></td>
+        <th><%= t('.rule') %></td>
+        <th><%= t('.value') %></td>
+        <th><%= t('.img') %></td>
+        <th><%= t('.action') %></td>
+
+      </tr>
+
+      <%= render @badges %>
+
+    </table>
+    <%=button_to t('.create_badge'), new_admin_badge_path,class: 'btn btn-success',method:  :get %>
+  </div>
+</div>

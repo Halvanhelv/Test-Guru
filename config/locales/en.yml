@@ -24,6 +24,13 @@ en:
         links: "Link"
         user: "User"
         back: "Back"
+    badges:
+      badge:
+        delete: ""
+      index:
+        create_badge: ""
+      new:
+        short_description: ""
   tests:
     index:
       header: "Tests List"

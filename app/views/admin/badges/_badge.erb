@@ -1,0 +1,14 @@
+
+<td class="align-middle"><%= badge.title %></td>
+<td class="align-middle"><%= badge.rule %></td>
+<td class="align-middle"><%= badge.value %></td>
+<td class="align-middle"><%= badge.img %></td>
+<td class="align-middle">
+  <%= link_to t('.edit'),
+              edit_admin_badge_path(badge),
+              # data: { test_id: test.id },
+              class: 'form-inline-link' %>
+ </td>
+
+<td class="align-middle"><%= link_to t('.delete'), admin_badge_path(badge), method: :delete, data: {confirm: "Are you sure?"} %></td>
+</tr>

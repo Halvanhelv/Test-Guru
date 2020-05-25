@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class TestPassage < ApplicationRecord
+  scope :sort_complited, lambda {
+    where(complited: 1)
+  }
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -8,6 +11,7 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_next_question, on: :update
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.complited = 1 if success?
     save!
   end
   WIN_COUNT = 85
@@ -16,7 +20,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    result? < WIN_COUNT
+    result? > WIN_COUNT
   end
 
   def progress_bar
@@ -50,7 +54,7 @@ class TestPassage < ApplicationRecord
   private
 
   def before_validation_set_next_question
-    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
+    self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first if test.present?
   end
 
   def before_validation_set_first_question

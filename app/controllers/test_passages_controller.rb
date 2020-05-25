@@ -8,12 +8,19 @@ class TestPassagesController < ApplicationController
     # тут сработает когда сделаем  redirect_to @user.test_passage(@test) из контроллере tests
   end
 
-  def result; end
+  def result
+    @badge = Badge.new
+    if @badge.checked(current_user)
+      flash[:ss] = 'Успешно'
+    else
+      flash[:s] = 'не успешно'
+    end
+  end
 
   def update
     @test_passage.accept!(params[:answers_ids])
     if @test_passage.complited?
-      TestsMailer.completed_test(@test_passage).deliver_now
+      # TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

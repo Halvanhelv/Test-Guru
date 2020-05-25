@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class QuestionGistsCascadeDelete < ActiveRecord::Migration[6.0]
   def change
     remove_foreign_key :gists, :questions
