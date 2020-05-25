@@ -9,7 +9,7 @@ class TestPassagesController < ApplicationController
   end
 
   def result
-    @badge = Badge.new
+    @badge = BadgeService.new
     if @badge.checked(current_user)
       flash[:ss] = 'Успешно'
     else
