@@ -1,6 +1,13 @@
 <h1>Прохождение теста <%=@test_passage.test.title %></h1>
 <div class="greyBar"><%= content_tag :div, "#{@test_passage.progress_bar}%", class: 'greenBar', data: { progress_bar: @test_passage.progress_bar } %>
 </div>
+<div>
+  <span>Осталось времени:</span>
+  <%=content_tag :span, '',class: 'timer',data: { timer: Timer.new(@test_passage).timer_end,test_passage_id: @test_passage.id }  %>
+</div>
+
+
+
 <b>
   <%=@test_passage.current_question.body %>
 </b>

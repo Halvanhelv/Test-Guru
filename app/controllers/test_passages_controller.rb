@@ -11,15 +11,21 @@ class TestPassagesController < ApplicationController
   def result; end
 
   def update
-    @test_passage.accept!(params[:answers_ids])
-    if @test_passage.complited?
-      BadgeService.new(@test_passage).call if @test_passage.success?
 
-      # TestsMailer.completed_test(@test_passage).deliver_now
-      redirect_to result_test_passage_path(@test_passage)
+    if Timer.new(@test_passage).check_timer || @test_passage.test.timer.zero? # если время еще не вышло или если изначально время не было установлено для теста и равнялось нулю
+      @test_passage.accept!(params[:answers_ids])
+      if @test_passage.complited?
+        BadgeService.new(@test_passage).call if @test_passage.success?
+
+        # TestsMailer.completed_test(@test_passage).deliver_now
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     else
-      render :show
-    end
+      flash[:timer] = 'Время вышло'
+      redirect_to result_test_passage_path(@test_passage)
+   end
   end
 
   def gist
