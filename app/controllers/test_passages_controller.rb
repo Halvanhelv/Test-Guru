@@ -8,7 +8,11 @@ class TestPassagesController < ApplicationController
     # тут сработает когда сделаем  redirect_to @user.test_passage(@test) из контроллере tests
   end
 
-  def result; end
+  def result
+    unless @test_passage.check_timer || @test_passage.test.timer.zero?
+      flash[:timer] = 'Время вышло' #js отправляет get запрос если время вышло, и flash в update не сработает
+    end
+  end
 
   def update
 
