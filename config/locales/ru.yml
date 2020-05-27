@@ -29,6 +29,13 @@ ru:
         links: "Ссылка"
         user: "Пользователь"
         back: "Назад"
+    badges:
+      badge:
+        delete: ""
+      index:
+        create_badge: "Создать ачивку"
+      new:
+        short_description: "Краткое описание"
   tests:
     index:
       header: "Тесты"

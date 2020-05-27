@@ -13,6 +13,8 @@ class User < ApplicationRecord
   has_many :test_passages # цепляет  все строки из tests_users
   has_many :tests, through: :test_passages # а это уже позволяет по по пойманным строкам искать нужное в таблице users,  # прямой связи с таблицей tests у меня нет и потому используется данная конструкция
   has_many :tests_author, class_name: 'Test', foreign_key: 'author_id' # вместо :tests_author можно указать что будет удобнее, показывает тесты автора
+  has_many :users_badge
+  has_many :badges, through: :users_badge
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :name, presence: true
   validates :login, presence: true, uniqueness: true

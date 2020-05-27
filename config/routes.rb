@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   devise_for :users, path_names: { sign_in: :login, sign_out: :logout },
                      controllers: { registrations: 'users/registrations' }
   resources :feedback, only: %i[new create]
-
   resources :tests, only: :index do
     member do
       post :start
     end
   end
+  resources :badges, only: :index
   resources :test_passages, only: %i[show update] do
     member do
       get :result # GET /tests_passages/10/result
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     resources :gists, only: :index
-
+    resources :badges
     root 'tests#index'
 
     resources :tests do

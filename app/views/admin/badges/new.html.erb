@@ -1,0 +1,25 @@
+<div class="row">
+  <%= form_with model: [:admin, @badge],local: true do |form| %>
+    <%=render 'layouts/shared/errors',resource: @badge %>
+    <p> <%=form.label t('.short_description') %>
+      <%=form.text_field :title %>
+    </p>
+    <p> <%=form.label :rule %>
+      <%=form.collection_select :rule,Badge.all,:rule,:rule %>
+    </p>
+    <p>
+      <%=form.label :value %>
+      <%=form.text_field :value%>
+    </p>
+    <p>
+      <%=form.label :img %>
+      <%=form.text_field :img%>
+    </p>
+<!--    <p> <%#=form.label :category_id %>-->
+      <%#=form.collection_select :category_id, Category.all, :id,:title, prompt:true %>
+<!--    </p>-->
+
+    <p><%=form.submit %></p>
+
+  <% end %>
+</div>

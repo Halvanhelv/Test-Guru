@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class FeedbackControllerTest < ActionDispatch::IntegrationTest
+class BadgeControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

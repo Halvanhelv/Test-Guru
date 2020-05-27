@@ -17,3 +17,6 @@ en:
       test:
         edit: "Edit"
         delete: "Delete"
+    badges:
+      new:
+        short_description: ""
