@@ -3,7 +3,7 @@
 </div>
 <div>
   <span>Осталось времени:</span>
-  <%=content_tag :span, '',class: 'timer',data: { timer: Timer.new(@test_passage).timer_end,test_passage_id: @test_passage.id }  %>
+  <%=content_tag :span, '',class: 'timer',data: { timer: @test_passage.timer_end,test_passage_id: @test_passage.id }  %>
 </div>
 
 

@@ -12,7 +12,7 @@ class TestPassagesController < ApplicationController
 
   def update
 
-    if Timer.new(@test_passage).check_timer || @test_passage.test.timer.zero? # если время еще не вышло или если изначально время не было установлено для теста и равнялось нулю
+    if @test_passage.check_timer || @test_passage.test.timer.zero? # если время еще не вышло или если изначально время не было установлено для теста и равнялось нулю
       @test_passage.accept!(params[:answers_ids])
       if @test_passage.complited?
         BadgeService.new(@test_passage).call if @test_passage.success?
