@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Test < ApplicationRecord
+
   # has_and_belongs_to_many :users
   belongs_to :author, class_name: 'User'
   belongs_to :category
@@ -9,7 +10,7 @@ class Test < ApplicationRecord
   has_many :users, through: :test_passages # нужно что бы проходило через модель tests_user а не напрямую в модель user. з
 
   validates :title, presence: true
-  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :level, :timer, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :title, uniqueness: { scope: :level,
                                   message: 'Неуникальное значение уровня и названия теста' }
   scope :easy, -> { where(level: (0..1)) }
