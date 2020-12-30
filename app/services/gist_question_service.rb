@@ -12,7 +12,7 @@ class GistQuestionService
   end
 
   def success?
-    @client.last_response.status == 201 || 200 # Проверем ответ на наличие указания что Gist создан
+    @client.last_response.status == 201 || 200
   end
 
   private

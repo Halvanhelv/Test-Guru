@@ -11,11 +11,11 @@ class TestsController < ApplicationController
     if @test.questions.any?
 
       current_user.tests.push(@test)
-      redirect_to current_user.test_passage(@test) # придет конкретный объект и поскольку он один то сработает метод show в контроллере tests_controller, поскольку мы стартуем тест из со страницы всех тестов то что бы отобразился нужный нам объект нужно отправить запрос на метод show в контроллере tests_controller
+      redirect_to current_user.test_passage(@test)
     else
       flash['warning'] = 'Администратор еще не добавил вопросов '
       redirect_to root_path
-      end
+    end
   end
 
   private

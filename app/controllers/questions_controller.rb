@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   before_action :find_test, only: %i[index new create]
   before_action :find_question, only: %i[show destroy edit update]
   before_action :authenticate_user!
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found # не забывать ":" перед названием метода
+  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     @questions = @test.questions.all
@@ -33,9 +33,9 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_path(@test) # при передаче объекта все равно подставляется цифра
+      redirect_to test_path(@test)
     else
-      render :new # вызов вьюшки new но без кода внутри. @question берется отсюда
+      render :new
     end
   end
 

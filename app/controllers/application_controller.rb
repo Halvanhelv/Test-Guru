@@ -2,7 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :set_locale
-  def after_sign_in_path_for(resource) # resource это объект класса user
+  def after_sign_in_path_for(resource)
     flash[:hello] = "Привет,#{resource.name}"
     if resource.admin?
       admin_root_path

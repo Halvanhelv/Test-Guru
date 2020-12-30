@@ -48,6 +48,7 @@ class TestPassage < ApplicationRecord
   def complited?
     current_question.nil?
   end
+
   def check_timer
     (created_at.to_i + self.test.timer * 60) > Time.now.to_i
   end
@@ -55,6 +56,7 @@ class TestPassage < ApplicationRecord
   def timer_end
     (created_at.to_i + self.test.timer * 60) - Time.now.to_i
   end
+
   private
 
   def before_validation_set_next_question

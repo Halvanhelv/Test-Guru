@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def flash_messages(flash)
     flash.map do |key, msg|
-      content_tag :div, msg, id: key, class: 'flash alert'
+      tag.div(msg, id: key, class: 'flash alert')
     end.join.html_safe
   end
 end
