@@ -46,9 +46,9 @@ function formInlineHandler(testId) {
 
     if (link) {
         if ($formInline.is(':visible')) {
-            link.textContent = 'Отмена';
+            link.textContent = 'Cancel';
         } else {
-            link.textContent = 'Изменить';
+            link.textContent = 'Edit';
         }
     }
 }

@@ -13,7 +13,7 @@ class TestsController < ApplicationController
       current_user.tests.push(@test)
       redirect_to current_user.test_passage(@test)
     else
-      flash['warning'] = 'Администратор еще не добавил вопросов '
+      flash['warning'] = 'Administrator has not added questions yet'
       redirect_to root_path
     end
   end

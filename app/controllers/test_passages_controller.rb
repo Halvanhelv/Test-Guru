@@ -7,7 +7,7 @@ class TestPassagesController < ApplicationController
   def show; end
 
   def result
-    flash[:timer] = 'Время вышло' unless @test_passage.check_timer || @test_passage.test.timer.zero?
+    flash[:timer] = 'Time is up' unless @test_passage.check_timer || @test_passage.test.timer.zero?
   end
 
   def update
@@ -21,7 +21,7 @@ class TestPassagesController < ApplicationController
         render :show
       end
     else
-      flash[:timer] = 'Время вышло'
+      flash[:timer] = 'Time is up'
       redirect_to result_test_passage_path(@test_passage)
     end
   end

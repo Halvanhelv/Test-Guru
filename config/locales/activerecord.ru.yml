@@ -1,23 +1,23 @@
 ru:
   activerecord:
     models:
-      test: "Тест"
+      test: "Test"
 
     attributes:
       test:
-        title: "Название"
-        category: "Категория"
+        title: "Title"
+        category: "Category"
 
     errors:
       messages:
-        blank: "не может быть пустым"
+        blank: "cannot be blank"
   test_passages:
     result:
-      header: "Тест %{title}  завершен!"
+      header: "Test %{title} completed!"
   admin:
     tests:
       test:
-        edit: "Изменить"
-        delete: "Удалить"
+        edit: "Edit"
+        delete: "Delete"
 
   text: ""

@@ -44,7 +44,7 @@ module Admin
 
     def destroy
       @test.destroy
-      flash[:delete] = "тест #{@test.title} удален"
+      flash[:delete] = "test #{@test.title} deleted"
       redirect_to admin_tests_path
     end
 

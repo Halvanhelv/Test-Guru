@@ -57,7 +57,7 @@ module Admin
     end
 
     def rescue_with_question_not_found
-      render inline: '<h1>Вопрос не найден</h1>'
+      render inline: '<h1>Question not found</h1>'
     end
 
     def question_params

@@ -1,8 +1,8 @@
-<h1>Прохождение теста <%=@test_passage.test.title %></h1>
+<h1>Taking test <%=@test_passage.test.title %></h1>
 <div class="greyBar"><%= content_tag :div, "#{@test_passage.progress_bar}%", class: 'greenBar', data: { progress_bar: @test_passage.progress_bar } %>
 </div>
 <div>
-  <span>Осталось времени:</span>
+  <span>Time remaining:</span>
   <%=content_tag :span, '',class: 'timer',data: { timer: @test_passage.timer_end,test_passage_id: @test_passage.id }  %>
 </div>
 
@@ -21,6 +21,6 @@
 </p>
     <% end %>
  <p> <%=link_to 'Gist',gist_test_passage_path(@test_passage),method: :post %></p>
-<%= form.submit 'Следующий вопрос' %>
+<%= form.submit 'Next question' %>
 <%end %>
-<p>Вопрос <%= @test_passage.all_questions_number%> из <%=@test_passage.questions_count %> </p>
+<p>Question <%= @test_passage.all_questions_number%> of <%=@test_passage.questions_count %> </p>

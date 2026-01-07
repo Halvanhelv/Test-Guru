@@ -2,89 +2,89 @@ ru:
   admin:
     tests:
       new:
-        title: "Добавить тест"
-        back: "Назад к тестам"
+        title: "Add test"
+        back: "Back to tests"
       index:
-        header: "Список тестов"
-        create_test: "Добавить тест"
-        title: "Название"
-        category: "Категория"
-        level: "Сложность"
-        questions: "Количество вопросов"
-        action: "Действия"
+        header: "Test list"
+        create_test: "Add test"
+        title: "Title"
+        category: "Category"
+        level: "Difficulty"
+        questions: "Number of questions"
+        action: "Actions"
       edit:
-        edit: "Изменить тест"
+        edit: "Edit test"
       show:
-        add: "Добавить вопрос"
-        back: "Назад"
-        test: "Тест"
+        add: "Add question"
+        back: "Back"
+        test: "Test"
       create:
-        success: "Тест успешно создан"
+        success: "Test successfully created"
       form_inline:
-        submit: "ОК"
+        submit: "OK"
     gists:
       index:
-        gists: "Гисты"
-        question: "Вопрос"
-        links: "Ссылка"
-        user: "Пользователь"
-        back: "Назад"
+        gists: "Gists"
+        question: "Question"
+        links: "Link"
+        user: "User"
+        back: "Back"
     badges:
       badge:
         delete: ""
       index:
-        create_badge: "Создать ачивку"
+        create_badge: "Create badge"
       new:
-        short_description: "Краткое описание"
+        short_description: "Short description"
   tests:
     index:
-      header: "Тесты"
-      title: "Название"
+      header: "Tests"
+      title: "Title"
   test:
     index:
-      start: "Старт"
+      start: "Start"
   helpers:
     select:
       # Default value for :prompt => true in FormOptionsHelper
-      prompt: "Выберите пункт"
+      prompt: "Select an option"
     submit:
       test:
-        create: "Создать тест"
-        update: "Обновить тест"
+        create: "Create test"
+        update: "Update test"
 
     label:
       test:
-        title: "Название"
-        level: "Уровень"
-        category_id: "Категория"
-      feedback: "Отзыв"
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      feedback: "Feedback"
 
 
   shared:
     errors:
       header:
-        few: "Обнаружено %{count} ошибки"
-        many: "Обнаружено %{count} ошибок"
-        one: "Обнаружена %{count} ошибка"
-        other: "Обнаружено %{count} ошибки"
+        few: "Found %{count} errors"
+        many: "Found %{count} errors"
+        one: "Found %{count} error"
+        other: "Found %{count} errors"
     tests_mailer:
       completed_test:
-        subject: "Вы завершили тест!"
+        subject: "You have completed the test!"
   test_passages:
     gist:
-      success: "Gist успешно создан,%{gist_link}"
-      failure: "Не удалось создать Gist"
+      success: "Gist successfully created, %{gist_link}"
+      failure: "Failed to create Gist"
   title: "%{title}"
   layouts:
     shared:
       errors:
         header:
-          one: "сохранение не удалось из-за %{count} ошибки"
-          few: "сохранение не удалось из-за %{count} ошибок"
-          many: "сохранение не удалось из-за %{count} ошибок"
-          other: "сохранение не удалось из-за %{count} ошибки"
+          one: "could not be saved due to %{count} error"
+          few: "could not be saved due to %{count} errors"
+          many: "could not be saved due to %{count} errors"
+          other: "could not be saved due to %{count} errors"
   feedback:
     create:
-      feedback: "Ваш отзыв отправлен"
+      feedback: "Your feedback has been sent"
 
 

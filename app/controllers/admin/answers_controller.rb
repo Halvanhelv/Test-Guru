@@ -17,7 +17,7 @@ module Admin
       @answer = @question.answers.new(answer_params)
 
       if @answer.save
-        redirect_to admin_question_path(@answer.question), notice: 'Ответ успешно создан'
+        redirect_to admin_question_path(@answer.question), notice: 'Answer successfully created'
       else
         render :new
       end
@@ -25,7 +25,7 @@ module Admin
 
     def update
       if @answer.update(answer_params)
-        redirect_to @answer, notice: 'Ответ успешно обновлен'
+        redirect_to @answer, notice: 'Answer successfully updated'
       else
         render :edit
       end

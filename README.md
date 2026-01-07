@@ -10,7 +10,7 @@ administrator can:
 - create tests
 - create test questions
 - create answers to test questions
-- сreate badges for tests
+- create badges for tests
 
 user can: 
 - take tests

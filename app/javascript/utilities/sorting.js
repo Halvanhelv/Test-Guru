@@ -37,7 +37,7 @@ function sortRowsByTitle() {
     table.parentNode.replaceChild(sortedTable, table);
 }
 
-function compareRowsAsc(row1, row2) { // особенность sort, нужно вернуть 0,1,-1 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+function compareRowsAsc(row1, row2) { // sort feature, need to return 0, 1, -1 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
     const firstTitle = row1.querySelector('td').textContent;
     const secondTitle = row2.querySelector('td').textContent;
 
